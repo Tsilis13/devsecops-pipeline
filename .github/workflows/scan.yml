@@ -36,7 +36,7 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Run Docker scan
-        uses: docker/scan-action@v1
+        uses: docker/scout-action@v1
         with:
           command: cves
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
