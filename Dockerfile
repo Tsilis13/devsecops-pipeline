@@ -1,5 +1,7 @@
-FROM alpine
+FROM python:3.9-slim
 
-RUN apk add gcc make git linux-headers musl-dev
+WORKDIR /app
 
-RUN git clone https://github.com/HewlettPackard/wireless-tools/ && cd wireless-tools/wireless_tools && make CFLAGS='-Wno-error -Wno-implicit-function-declaration -Wno-int-conversion'
+COPY finalELscenarios.py .
+
+CMD ["python", "finalELscenarios.py"]
